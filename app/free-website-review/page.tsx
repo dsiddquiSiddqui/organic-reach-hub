@@ -1,0 +1,6 @@
+import type { Metadata } from 'next';
+import { LeadForm } from '@/components/lead-form';
+import { PageHero } from '@/components/page-shell';
+import { Check } from 'lucide-react';
+export const metadata:Metadata={title:'Free Website Review',description:'Request a free review of your business website and get practical next steps for website health, search and conversions.',alternates:{canonical:'/free-website-review'}};
+export default function Page(){return <><PageHero eyebrow="Free website review" title="Know what to improve next." copy="We’ll take a practical look at your site and share the issues and opportunities worth your attention." actions={false} compact /><section className="section"><div className="container review-band"><div><span className="eyebrow">What we look at</span><h2 className="heading" style={{fontSize:'clamp(42px,5vw,64px)',margin:'18px 0'}}>A useful first look, without the sales theatre.</h2><div className="feature-list" style={{marginTop:30}}>{['Website health and mobile experience','Search visibility and page clarity','The journey from visit to enquiry'].map(x=><div key={x} style={{display:'flex',gap:10,alignItems:'center',fontSize:14}}><Check size={17}/>{x}</div>)}</div></div><LeadForm/></div></section></>}
