@@ -4,12 +4,12 @@ import { ArrowUpRight, Wrench, Search, MousePointer2, BarChart3, ShieldCheck, Ga
 const services = [
   { icon: Wrench, title: 'Website management', copy: 'Updates, monitoring, fixes and useful changes every month.', href: '/website-management' },
   { icon: Search, title: 'SEO', copy: 'Keep key pages discoverable, relevant and technically sound.', href: '/seo' },
-  { icon: ScanSearch, title: 'Technical SEO', copy: 'Indexing, schema, links, sitemaps and site health.', href: '/services' },
-  { icon: Megaphone, title: 'Google Ads', copy: 'Focused search campaigns built around buying intent.', href: '/paid-growth' },
-  { icon: MousePointer2, title: 'Meta Ads', copy: 'Reach the right audience and learn what converts.', href: '/paid-growth' },
+  { icon: ScanSearch, title: 'Technical SEO', copy: 'Indexing, schema, links, sitemaps and site health.', href: '/technical-seo' },
+  { icon: Megaphone, title: 'Google Ads', copy: 'Focused search campaigns built around buying intent.', href: '/google-ads-management' },
+  { icon: MousePointer2, title: 'Meta Ads', copy: 'Reach the right audience and learn what converts.', href: '/meta-ads-management' },
   { icon: Gauge, title: 'Landing pages', copy: 'Improve headlines, forms and calls to action.', href: '/paid-growth' },
   { icon: BarChart3, title: 'Analytics', copy: 'Know what people find, click and enquire about.', href: '/services#analytics' },
-  { icon: Target, title: 'CRO improvements', copy: 'Refine the content, forms and page journeys that turn visits into enquiries.', href: '/services#cro', variant: 'cro' },
+  { icon: Target, title: 'CRO improvements', copy: 'Refine the content, forms and page journeys that turn visits into enquiries.', href: '/conversion-rate-optimisation', variant: 'cro' },
   { icon: Workflow, title: 'AI workflow automation', copy: 'Reduce repetitive admin with practical, human-reviewed AI-assisted workflows.', href: '/services#ai-automation', variant: 'ai' },
   { icon: ShieldCheck, title: 'Conversion tracking', copy: 'Measure the enquiries that matter, then improve the journey.', href: '/services#analytics', variant: 'tracking' },
 ];

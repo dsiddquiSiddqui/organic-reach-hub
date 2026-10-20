@@ -1,8 +1,8 @@
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://organicreachhub.com';
 export const brand = 'Organic Reach HUB';
 export const description = 'One dedicated partner managing your website, SEO and digital growth every month. Ongoing website care for UK and US small businesses.';
-export const nav = [{label:'Services',href:'/services'},{label:'Packages',href:'/packages'},{label:'Insights',href:'/blog'},{label:'About',href:'/about'}];
-export const serviceLinks = [{title:'Website management',href:'/website-management',detail:'The everyday care your site deserves'},{title:'SEO',href:'/seo',detail:'Improve the pages people actually find'},{title:'Paid growth',href:'/paid-growth',detail:'Focused Google or Meta campaigns'},{title:'CRO improvements',href:'/services#cro',detail:'Make the enquiry journey clearer'},{title:'AI workflow automation',href:'/services#ai-automation',detail:'Reduce repetitive work with practical workflows'}];
+export const nav = [{label:'Services',href:'/services'},{label:'Our work',href:'/our-work'},{label:'Packages',href:'/packages'},{label:'Insights',href:'/blog'},{label:'About',href:'/about'}];
+export const serviceLinks = [{title:'Website management',href:'/website-management',detail:'Ongoing care and useful improvements'},{title:'Website maintenance',href:'/website-maintenance',detail:'Updates, monitoring and routine checks'},{title:'SEO',href:'/seo',detail:'Improve the pages people actually find'},{title:'Google Ads management',href:'/google-ads-management',detail:'Focused search campaigns and tracking'},{title:'Conversion optimisation',href:'/conversion-rate-optimisation',detail:'Make the enquiry journey clearer'}];
 export const faq = [
   ['What counts as a small website change?','A short update to existing pages, such as a text edit, image swap, CTA adjustment or minor layout improvement. We include up to three each month in Website + SEO. Larger work is scoped and quoted separately.'],
   ['Is there a long-term contract?','The service is billed monthly. The exact notice period and service terms are agreed before we start, so you know where you stand.'],

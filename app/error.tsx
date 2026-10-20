@@ -1,0 +1,3 @@
+'use client';
+import { useEffect } from 'react';
+export default function ErrorPage({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) { useEffect(() => { console.error(error); }, [error]); return <section className="page-hero error-page"><div className="container"><span className="eyebrow">Something went wrong</span><h1 className="display">We couldn’t load this page.</h1><p className="muted">Please try again. If the problem continues, you can still contact us directly from the contact page.</p><button className="btn btn-dark" type="button" onClick={reset}>Try again</button></div></section>; }
