@@ -7,8 +7,8 @@ export type PortfolioProject = {
   category: 'Website Development' | 'E-commerce' | 'Digital Creative' | 'Branding';
   summary: string | null;
   description: string | null;
-  historicalAgency: 'Agile Digital Technologies';
-  relationshipType: 'historical-agency-work';
+  attribution: 'Experience behind Organic Reach HUB';
+  relationshipType: 'previous-work';
   services: string[];
   industry: string | null;
   projectYear: number | null;
@@ -27,13 +27,13 @@ export type PortfolioProject = {
 };
 
 const approvedDetails: Record<string,{summary:string;description:string;featured:boolean}> = {
-  'riviera-shades': { summary: 'A historical responsive website presentation for the Riviera Shades brand.', description: 'The Agile Digital Technologies profile presents Riviera Shades under website development, showing desktop and mobile layouts for a sunglasses storefront. The available record supports website-development attribution only; project dates, technology and commercial outcomes are not stated.', featured: false },
-  '4ag-clothing': { summary: 'A historical fashion website presentation shown across desktop and mobile.', description: 'The Agile Digital Technologies profile presents 4AG Clothing under website development. The supplied imagery shows a visual retail experience across desktop and mobile screens. No technology stack, delivery date or performance result is documented in the source.', featured: false },
-  'jilani-taylors': { summary: 'A historical website presentation for Jilani Taylors and its clothing collections.', description: 'The Agile Digital Technologies profile presents Jilani Taylors under website development. Its historical screenshot shows a collection-led homepage and shopping navigation. The source does not document the platform, full scope or results.', featured: false },
-  'igloo-pakistan': { summary: 'A colourful historical website presentation for the Igloo Pakistan brand.', description: 'The Agile Digital Technologies profile presents Igloo Pakistan under website development. The approved historical screenshot shows a branded desktop layout with product-led imagery. Technology, objectives and outcomes are not asserted because they are absent from the supplied profile.', featured: true },
-  'good-guy-vapes': { summary: 'A historical responsive website presentation for Good Guy Vapes.', description: 'The Agile Digital Technologies profile presents Good Guy Vapes under website development, including desktop and mobile storefront views. The source confirms the presentation category but does not record the platform, date or commercial results.', featured: false },
-  'maroc-hammam-spa': { summary: 'A historical responsive website presentation for Maroc Hammam Spa.', description: 'The Agile Digital Technologies profile presents Maroc Hammam Spa under website development. The approved image shows a dark, gold-accented desktop and mobile experience. The source does not establish technology, full deliverables or performance outcomes.', featured: true },
-  'the-pink-stone': { summary: 'A historical website presentation for The Pink Stone.', description: 'The Agile Digital Technologies profile presents The Pink Stone as website-development work, with layered historical screens and brand imagery. No project date, technology stack or measured result is claimed beyond that source evidence.', featured: true },
+  'riviera-shades': { summary: 'A responsive website presentation for the Riviera Shades brand.', description: 'This approved previous-work record shows desktop and mobile layouts for a sunglasses storefront. The available record supports website-development attribution only; project dates, technology and commercial outcomes are not stated.', featured: false },
+  '4ag-clothing': { summary: 'A fashion website presentation shown across desktop and mobile.', description: 'This approved previous-work record shows a visual retail experience for 4AG Clothing across desktop and mobile screens. No technology stack, delivery date or performance result is documented in the source material.', featured: false },
+  'jilani-taylors': { summary: 'A website presentation for Jilani Taylors and its clothing collections.', description: 'This approved previous-work record shows a collection-led homepage and shopping navigation for Jilani Taylors. The source does not document the platform, full scope or results.', featured: false },
+  'igloo-pakistan': { summary: 'A colourful website presentation for the Igloo Pakistan brand.', description: 'This approved previous-work record shows a product-led desktop experience shaped around Igloo Pakistan’s distinctive visual identity. Technology, objectives and outcomes are not asserted because they are absent from the supplied material.', featured: true },
+  'good-guy-vapes': { summary: 'A responsive website presentation for Good Guy Vapes.', description: 'This approved previous-work record includes desktop and mobile storefront views for Good Guy Vapes. The source confirms the website-development category but does not record the platform, date or commercial results.', featured: false },
+  'maroc-hammam-spa': { summary: 'A responsive website presentation for Maroc Hammam Spa.', description: 'This approved previous-work record shows a dark, gold-accented desktop and mobile experience for Maroc Hammam Spa. The source does not establish technology, full deliverables or performance outcomes.', featured: true },
+  'the-pink-stone': { summary: 'A website presentation for The Pink Stone.', description: 'This approved previous-work record shows layered website screens and brand imagery for The Pink Stone. No project date, technology stack or measured result is claimed beyond the supplied source evidence.', featured: true },
 };
 
 const draftProjects: PortfolioProject[] = [
@@ -43,12 +43,12 @@ const draftProjects: PortfolioProject[] = [
   ['the-pink-stone', 'The Pink Stone', 38],
 ].map(([slug, name, page]) => ({
   id: String(slug), slug: String(slug), name: String(name), category: 'Website Development',
-  summary: approvedDetails[String(slug)].summary, description: approvedDetails[String(slug)].description, historicalAgency: 'Agile Digital Technologies', relationshipType: 'historical-agency-work',
+  summary: approvedDetails[String(slug)].summary, description: approvedDetails[String(slug)].description, attribution: 'Experience behind Organic Reach HUB', relationshipType: 'previous-work',
   services: ['Website development'], industry: null, projectYear: null,
-  images: [{ reviewPath: `/private/portfolio-review/${slug}.webp`, publicPath: `/portfolio/${slug}.webp`, alt: `Historical website presentation for ${name}, shown in the Agile Digital Technologies agency profile`, sourcePage: Number(page) }],
+  images: [{ reviewPath: `/private/portfolio-review/${slug}.webp`, publicPath: `/portfolio/${slug}.webp`, alt: `Previous website presentation for ${name}`, sourcePage: Number(page) }],
   technologies: [], objectives: [], deliverables: ['Website development'], results: [], clientWebsite: null,
   permissionStatus: 'approved', verified: true, featured: approvedDetails[String(slug)].featured, publishStatus: 'published',
-  seoTitle: `${name} Website Project`, seoDescription: `View the historical ${name} website-development project presented by Agile Digital Technologies and the experience behind Organic Reach HUB.`,
+  seoTitle: `${name} Website Project`, seoDescription: `View the approved ${name} website-development project from the experience behind Organic Reach HUB.`,
 })) as PortfolioProject[];
 
 export function getPublishedProjects() {

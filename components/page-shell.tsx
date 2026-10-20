@@ -46,5 +46,13 @@ export function BottomCta({ title = 'Let’s see what your website needs next.' 
 }
 
 export function ServiceSchema({ name, description, path }: { name: string; description: string; path: string }) {
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Service', name, description, provider: { '@type': 'Organization', name: 'Organic Reach HUB' }, url: `${siteUrl}${path}`, areaServed: ['GB', 'US'] }) }} />;
+  const graph = [
+    { '@context': 'https://schema.org', '@type': 'Service', name, description, provider: { '@type': 'Organization', name: 'Organic Reach HUB', url: siteUrl }, url: `${siteUrl}${path}`, areaServed: ['GB', 'US'] },
+    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+      { '@type': 'ListItem', position: 3, name, item: `${siteUrl}${path}` },
+    ] },
+  ];
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graph).replace(/</g, '\\u003c') }} />;
 }

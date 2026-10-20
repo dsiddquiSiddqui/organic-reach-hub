@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { getPublishedProjects, type PortfolioProject } from '@/lib/portfolio.server';
 
 export function TrustStrip() {
-  return <section className="trust-strip"><div className="container trust-strip-inner"><div><span className="eyebrow">Our background</span><h2>New brand. Established digital experience.</h2></div><p>Organic Reach HUB is an independent digital services business founded by an owner of Agile Digital Technologies, bringing practical website development and digital marketing experience into a focused ongoing service.</p><Link href="/about">Learn about our background <ArrowUpRight size={15} aria-hidden="true" /></Link></div></section>;
+  return <section className="trust-strip"><div className="container trust-strip-inner"><div><span className="eyebrow">Built around real work</span><h2>One partner who sees the whole picture.</h2></div><p>Organic Reach HUB brings practical website, search and digital marketing experience into one focused ongoing service—so the technical work and the commercial goal do not drift apart.</p><Link href="/about">Meet the thinking behind the business <ArrowUpRight size={15} aria-hidden="true" /></Link></div></section>;
 }
 
 export function ConversionReassurance() {
@@ -14,7 +14,7 @@ export function ConversionReassurance() {
 
 export function RelevantExperience({ service }: { service: 'website' | 'seo' | 'paid' }) {
   const content={
-    website:['Website experience behind the service','Historical website-development experience through Agile Digital Technologies informs how we assess structure, responsive behaviour and the long-term maintainability of a site. Approved examples will be linked here when attribution and publication permission are confirmed.'],
+    website:['Website experience behind the service','Previous website-development work informs how we assess structure, responsive behaviour and the long-term maintainability of a site. Explore the approved examples in our work archive.'],
     seo:['Evidence, not borrowed outcomes','Historical website screenshots do not prove SEO performance. We publish SEO results only when search or analytics evidence, scope and permission can be verified. Until then, our process and deliverables remain the evidence available on this page.'],
     paid:['Creative work is not campaign performance','Historical creative production does not establish advertising return. Paid-growth results will appear only when campaign records, attribution and publication permission are available.'],
   }[service];
@@ -22,7 +22,7 @@ export function RelevantExperience({ service }: { service: 'website' | 'seo' | '
 }
 
 export function ProjectAttribution() {
-  return <p className="project-attribution">Previous agency project <span aria-hidden="true">·</span> Agile Digital Technologies</p>;
+  return <p className="project-attribution">Selected previous work <span aria-hidden="true">·</span> Experience behind Organic Reach HUB</p>;
 }
 
 export function PortfolioCard({ project }: { project: PortfolioProject }) {
@@ -39,7 +39,7 @@ export function PortfolioGrid({ projects }: { projects: PortfolioProject[] }) {
 export function FeaturedProjects() {
   const projects=getPublishedProjects().filter(project=>project.featured).slice(0,3);
   if(!projects.length)return null;
-  return <section className="section featured-work"><div className="container"><div className="section-head"><div><span className="eyebrow">Selected historical work</span><h2 className="heading">Experience behind the work.</h2></div><div><p className="muted">Explore selected website projects previously delivered through Agile Digital Technologies, the agency connected to our founders.</p><Link className="editorial-text-link" href="/our-work">Explore our work <ArrowUpRight size={15} aria-hidden="true"/></Link></div></div><PortfolioGrid projects={projects}/></div></section>;
+  return <section className="section featured-work"><div className="container"><div className="section-head"><div><span className="eyebrow">Selected previous work</span><h2 className="heading">Experience you can see.</h2></div><div><p className="muted">Explore approved website projects from the experience behind Organic Reach HUB. We show the work honestly and avoid attaching results that have not been verified.</p><Link className="editorial-text-link" href="/our-work">Explore our work <ArrowUpRight size={15} aria-hidden="true"/></Link></div></div><PortfolioGrid projects={projects}/></div></section>;
 }
 
 export type Profile = { name: string; role: string; biography: string; image: string };

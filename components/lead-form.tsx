@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
-type LeadFormProps = { kind?: 'review' | 'contact'; selectedService?: string };
+type LeadFormProps = { kind?: 'review' | 'contact'; selectedService?: string; initialMessage?: string };
 const services = ['Website Management', 'SEO', 'Google Ads', 'Meta Ads', 'CRO Improvements', 'AI Workflow Automation', 'Analytics and Tracking', 'Website + SEO', 'Advanced Growth', 'Growth Plus'];
 
-export function LeadForm({ kind = 'review', selectedService = '' }: LeadFormProps) {
+export function LeadForm({ kind = 'review', selectedService = '', initialMessage = '' }: LeadFormProps) {
   const [pending, setPending] = useState(false);
   const [message, setMessage] = useState('');
   const [startedAt] = useState(() => Date.now());
@@ -34,7 +34,7 @@ export function LeadForm({ kind = 'review', selectedService = '' }: LeadFormProp
     <div className="form-grid"><label>Your name<input name="name" required autoComplete="name" placeholder="Jane Smith" /></label><label>Work email<input name="email" type="email" required autoComplete="email" placeholder="jane@company.com" /></label></div>
     <div className="form-grid"><label>Company<input name="company" required placeholder="Your business" /></label><label>Website URL<input name="website_url" type="url" placeholder="https://example.com" required={kind === 'review'} /></label></div>
     {kind === 'contact' && <label>What help do you need?<select name="service" required defaultValue={selectedService}><option value="" disabled>Select a service</option>{services.map(service => <option key={service} value={service}>{service}</option>)}</select></label>}
-    <label>{kind === 'review' ? 'Anything we should know? (optional)' : 'Your message'}<textarea name="message" placeholder="Tell us about your website or goals" required={kind === 'contact'} /></label>
+    <label>{kind === 'review' ? 'Anything we should know? (optional)' : 'Your message'}<textarea name="message" placeholder="Tell us about your website or goals" required={kind === 'contact'} defaultValue={initialMessage} /></label>
     <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true"><label>Leave this blank<input name="website_address" tabIndex={-1} autoComplete="off" /></label></div>
     <p className="form-privacy">By submitting this form, you agree that we may use your details to respond to your enquiry. See our <a href="/privacy">privacy policy</a>.</p>
     <button className="btn btn-dark" type="submit" disabled={pending}>{pending ? 'Sending…' : kind === 'review' ? 'Review my website' : 'Send enquiry'} <ArrowUpRight size={15} aria-hidden="true" /></button>

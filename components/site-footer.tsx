@@ -13,11 +13,11 @@ export function SiteFooter() {
         <div className="footer-brand"><Logo /><p>One dedicated partner for your website, search and digital growth. Direct communication and meaningful work, month after month.</p><span className="footer-availability"><i />Working with small businesses in the UK and US</span></div>
         <nav className="footer-columns" aria-label="Footer navigation">
           <div><h3>Explore</h3><Link href="/services">Services</Link><Link href="/our-work">Our work</Link><Link href="/packages">Packages</Link><Link href="/about">About</Link><Link href="/blog">Insights</Link></div>
-          <div><h3>What we do</h3><Link href="/website-management">Website management</Link><Link href="/website-maintenance">Website maintenance</Link><Link href="/seo">SEO</Link><Link href="/google-ads-management">Google Ads</Link><Link href="/conversion-rate-optimisation">CRO improvements</Link></div>
+          <div><h3>What we do</h3><Link href="/website-management">Website management</Link><Link href="/seo">SEO</Link><Link href="/google-ads-management">Google Ads</Link><Link href="/conversion-rate-optimisation">CRO improvements</Link><Link href="/ai-workflow-automation">AI workflow automation</Link><Link href="/analytics-conversion-tracking">Analytics & tracking</Link></div>
           <div><h3>Connect</h3><Link href="/free-website-review">Free website review</Link><Link href="/contact">Contact us</Link></div>
         </nav>
       </div>
-      <p className="footer-relationship">Organic Reach HUB is an independent business under shared ownership with Agile Digital Technologies.</p>
+      <p className="footer-relationship">Human-led website, search and growth support—strengthened by responsible use of AI.</p>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} Organic Reach HUB</span><div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/cookies">Cookies</Link></div><span>WEBSITE / SEARCH / GROWTH</span></div>
     </div>
   </footer>;

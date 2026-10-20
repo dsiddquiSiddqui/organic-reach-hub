@@ -26,7 +26,7 @@ export function ServiceLanding({ data }: { data: ServiceLandingData }) {
   const faqGraph = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: data.faqs.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) };
   return <>
     <ServiceSchema name={data.title} description={data.description} path={data.path} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqGraph) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqGraph).replace(/</g, '\\u003c') }} />
     <PageHero eyebrow={data.eyebrow} title={data.title} copy={data.intro} secondaryHref="/packages" secondaryLabel="Compare packages" />
     <section className="section intent-panel"><div className="container content-grid">
       <div><span className="eyebrow">A good fit for</span><h2 className="heading">Practical support for a site that matters to the business.</h2></div>
