@@ -37,7 +37,7 @@ const packages = [
   { name: 'Growth Plus', slug: 'growth-plus', summary: 'Designed for businesses connecting acquisition, conversion, reporting and practical AI-enabled workflows.', points: ['Everything in Advanced Growth', 'Ongoing conversion improvement', 'Scoped AI workflow automation and joined-up reporting'] },
 ];
 
-export function ScopeMatcher() {
+export function ScopeMatcher({ homepage = false }: { homepage?: boolean }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const finished = answers.length === questions.length;
@@ -51,8 +51,8 @@ export function ScopeMatcher() {
   const reset = () => { setAnswers([]); setStep(0); };
   const brief = encodeURIComponent(answers.map((answer) => answer.label).join(' | '));
 
-  return <section className="section scope-matcher-section" id="scope-matcher"><div className="container scope-matcher-shell">
-    <div className="scope-matcher-intro"><span className="eyebrow">Interactive scope matcher</span><h2 className="heading">Which support model fits your next stage?</h2><p>Answer four practical questions. We will suggest a starting point—not an automated quote or a binding scope.</p><div className="matcher-progress" aria-label={`Question ${Math.min(step + 1, questions.length)} of ${questions.length}`}>{questions.map((_, index) => <span className={index < answers.length ? 'is-complete' : index === step ? 'is-current' : ''} key={index}/>)}</div></div>
+  return <section className={`section scope-matcher-section${homepage ? ' scope-matcher-section--premium' : ''}`} id="scope-matcher"><div className="container scope-matcher-shell">
+    <div className="scope-matcher-intro"><span className="eyebrow">{homepage ? 'Your digital growth diagnosis' : 'Interactive scope matcher'}</span><h2 className="heading">{homepage ? 'What is holding your digital growth back?' : 'Which support model fits your next stage?'}</h2><p>{homepage ? 'Answer four practical questions. You will get a suggested starting point and the priorities behind it—not an automated quote.' : 'Answer four practical questions. We will suggest a starting point—not an automated quote or a binding scope.'}</p><div className="matcher-progress" aria-label={`Question ${Math.min(step + 1, questions.length)} of ${questions.length}`}>{questions.map((_, index) => <span className={index < answers.length ? 'is-complete' : index === step ? 'is-current' : ''} key={index}/>)}</div></div>
     <div className="scope-matcher-card" aria-live="polite">
       {!finished ? <>
         <span className="matcher-count">Question {step + 1} / {questions.length}</span>
