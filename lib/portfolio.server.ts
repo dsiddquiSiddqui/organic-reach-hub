@@ -7,7 +7,7 @@ export type PortfolioProject = {
   category: 'Website Development' | 'E-commerce' | 'Digital Creative' | 'Branding';
   summary: string | null;
   description: string | null;
-  attribution: 'Experience behind Organic Reach HUB';
+  attribution: 'Delivered through Agile Digital Technologies';
   relationshipType: 'previous-work';
   services: string[];
   industry: string | null;
@@ -43,7 +43,7 @@ const draftProjects: PortfolioProject[] = [
   ['the-pink-stone', 'The Pink Stone', 38],
 ].map(([slug, name, page]) => ({
   id: String(slug), slug: String(slug), name: String(name), category: 'Website Development',
-  summary: approvedDetails[String(slug)].summary, description: approvedDetails[String(slug)].description, attribution: 'Experience behind Organic Reach HUB', relationshipType: 'previous-work',
+  summary: approvedDetails[String(slug)].summary, description: approvedDetails[String(slug)].description, attribution: 'Delivered through Agile Digital Technologies', relationshipType: 'previous-work',
   services: ['Website development'], industry: null, projectYear: null,
   images: [{ reviewPath: `/private/portfolio-review/${slug}.webp`, publicPath: `/portfolio/${slug}.webp`, alt: `Previous website presentation for ${name}`, sourcePage: Number(page) }],
   technologies: [], objectives: [], deliverables: ['Website development'], results: [], clientWebsite: null,

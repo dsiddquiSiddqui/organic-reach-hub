@@ -22,7 +22,7 @@ export function RelevantExperience({ service }: { service: 'website' | 'seo' | '
 }
 
 export function ProjectAttribution() {
-  return <p className="project-attribution">Selected previous work <span aria-hidden="true">·</span> Experience behind Organic Reach HUB</p>;
+  return <p className="project-attribution">Selected experience from work delivered through Agile Digital Technologies, a separate business under shared ownership with Organic Reach HUB.</p>;
 }
 
 export function PortfolioCard({ project }: { project: PortfolioProject }) {
@@ -39,7 +39,7 @@ export function PortfolioGrid({ projects }: { projects: PortfolioProject[] }) {
 export function FeaturedProjects() {
   const projects=getPublishedProjects().filter(project=>project.featured).slice(0,3);
   if(!projects.length)return null;
-  return <section className="section featured-work"><div className="container"><div className="section-head"><div><span className="eyebrow">Selected previous work</span><h2 className="heading">Experience you can see.</h2></div><div><p className="muted">Explore approved website projects from the experience behind Organic Reach HUB. We show the work honestly and avoid attaching results that have not been verified.</p><Link className="editorial-text-link" href="/our-work">Explore our work <ArrowUpRight size={15} aria-hidden="true"/></Link></div></div><PortfolioGrid projects={projects}/></div></section>;
+  return <section className="section featured-work"><div className="container"><div className="section-head"><div><span className="eyebrow">Selected previous work</span><h2 className="heading">Experience you can see.</h2></div><div><p className="muted">Explore approved website projects delivered through Agile Digital Technologies, a separate business under shared ownership. We avoid attaching results that have not been verified.</p><Link className="editorial-text-link" href="/our-work">Explore our work <ArrowUpRight size={15} aria-hidden="true"/></Link></div></div><PortfolioGrid projects={projects}/></div></section>;
 }
 
 export type Profile = { name: string; role: string; biography: string; image: string };

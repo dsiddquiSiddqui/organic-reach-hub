@@ -22,7 +22,7 @@ export function SiteHeader() {
     return () => window.removeEventListener('scroll', update);
   }, []);
 
-  const servicePaths = ['/website-management', '/website-maintenance', '/wordpress-management', '/seo', '/local-seo', '/technical-seo', '/paid-growth', '/google-ads-management', '/meta-ads-management', '/conversion-rate-optimisation'];
+  const servicePaths = ['/website-management', '/website-maintenance', '/wordpress-management', '/seo', '/local-seo', '/technical-seo', '/paid-growth', '/google-ads-management', '/meta-ads-management', '/conversion-rate-optimisation', '/ai-workflow-automation', '/analytics-conversion-tracking'];
   const isActive = (href: string) => pathname === href || (href === '/blog' && pathname.startsWith('/blog/')) || (href === '/services' && servicePaths.includes(pathname));
 
   return <header className={`site-header${scrolled ? ' is-scrolled' : ''}${open ? ' menu-open' : ''}`}>

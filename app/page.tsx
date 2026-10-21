@@ -6,6 +6,8 @@ import { PackagesSection } from '@/components/packages-section';
 import { LeadForm } from '@/components/lead-form';
 import { ArticleCard } from '@/components/article-card';
 import { ConversionReassurance } from '@/components/trust-content';
+import { HomeFaq } from '@/components/home-faq';
+import { FaqSchema } from '@/components/faq-schema';
 import { getPosts } from '@/lib/posts';
 import {
   CuratedCredibility,
@@ -21,6 +23,7 @@ import './home-premium.css';
 export default async function Home() {
   const posts = (await getPosts()).slice(0, 3);
   return <>
+    <FaqSchema />
     <HomeMotion />
     <PremiumHero />
     <CuratedCredibility />
@@ -36,6 +39,7 @@ export default async function Home() {
       <div className="blog-grid" data-home-reveal>{posts.map((post, index) => <ArticleCard post={post} index={index} key={post.slug}/>)}</div>
     </div></section>
     <ConversionReassurance />
+    <HomeFaq />
     <section className="section premium-review"><div className="container"><div className="review-band" data-home-reveal><div><span className="eyebrow">A personal next step</span><h2 className="heading">Let me take a proper look at your website.</h2><p>Share the site and what is frustrating you. You will receive a practical review of the most useful next steps, without an obligation to buy a package.</p></div><LeadForm/></div></div></section>
   </>;
 }

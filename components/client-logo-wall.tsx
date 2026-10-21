@@ -6,8 +6,8 @@ export function ClientLogoWall({ compact = false }: { compact?: boolean }) {
   return <section className={`section client-logo-section${compact ? ' client-logo-section--compact' : ''}`}>
     <div className="container">
       <div className="section-head">
-        <div><span className="eyebrow">Experience behind the business</span><h2 className="heading">Brands we have worked with.</h2></div>
-        <p className="muted">A selection of organisations represented in our approved previous-work archive. These logos show past project experience and do not imply a current retained relationship.</p>
+        <div><span className="eyebrow">Approved previous experience</span><h2 className="heading">Brands represented in the work archive.</h2></div>
+        <p className="muted">Selected experience from work delivered through Agile Digital Technologies, a separate business under shared ownership with Organic Reach HUB. These logos do not imply a current retained relationship.</p>
       </div>
       <div className="client-logo-grid" aria-label="Previous client and project brands">
         {logos.map((logo, index) => <div className="client-logo-card" key={`${logo.src}-${index}`}>
